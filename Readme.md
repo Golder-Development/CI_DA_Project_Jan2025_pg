@@ -1,7 +1,6 @@
-# Project XYZ
+# Paul Golder Data Analytics Idividual Formative assignement
 
-**Project XYZ** is a comprehensive data analysis tool designed to streamline data exploration, analysis, and visualisation. The tool supports multiple data formats and provides an intuitive interface for both novice and expert data scientists.
-
+**Data Analytics Idividual Formative assignement** is a jupyter notebook built to meet the requirements for the Individual Formative assignement as part of the Code Institute Data Analytics and AI Boot Camp.
 # ![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
 
 
