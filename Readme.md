@@ -5,85 +5,65 @@
 
 
 ## Dataset Content
-* Describe your dataset. Choose a dataset of reasonable size to avoid exceeding the repository's maximum size of 100Gb.
+* Dateset was obtained from Kaggle and was the [Retail Data Set](https://www.kaggle.com/datasets/manjeetsingh/retaildataset)
+* As part of the project this was analysed and described.
+* It started as 3 files - one of Weekly Sales data by store and department, another of Store size and classifications and a third outlining promotional discounts, CPI, Unemployment and Temperature.
 
 
 ## Business Requirements
-* Describe your business requirements
+* Descriptive Statistics: Display basic statistics such as average sales per store and department.  
+* Trend Analysis: Plot sales trends over time for different stores and departments.  
+* Impact Analysis: Visualise the impact of markdowns on sales during holidays versus non-holiday periods.  
+* Comparative Analysis: Compare sales performance across different stores and regions.  
 
 
 ## Hypothesis and how to validate?
-* List here your project hypothesis(es) and how you envision validating it (them) 
+* Hypothesis -
+1. Store Sales Varied by Size of store
+2. Store were grouped into types based on an identifyable characteristic
+3. Holiday Sales varied from Non-holiday sales
+4. Total Sales were influenced by Markdown(discounted sales)
 
 ## Project Plan
-* Outline the high-level steps taken for the analysis.
-* How was the data managed throughout the collection, processing, analysis and interpretation steps?
-* Why did you choose the research methodologies you used?
+* Project was managed using a github Kanban board
+* [Link to Relevant Kanban board on github](https://github.com/orgs/Golder-Development/projects/1)
+* Ideas and enhancements were added to the project plan and reviewed across the delivery with regards to deliverability. Some were then identified as potential future developments and enhancements
 
 ## The rationale to map the business requirements to the Data Visualisations
-* List your business requirements and a rationale to map them to the Data Visualisations
+* Initially the aim of the visualisations was to help identify characteristic of the data that may support the hypothesis.
+* Scatter graphs were used to look for corrollations 
+* Line graphs were used to look at trends over time
+* Bar graphs were used to look at the prevelance of different identifyable characteristics.
+* Box and Whisker graphs were used to show the spread and relationships of results
 
 ## Analysis techniques used
-* List the data analysis methods used and explain limitations or alternative approaches.
-* How did you structure the data analysis techniques. Justify your response.
-* Did the data limit you, and did you use an alternative approach to meet these challenges?
-* How did you use generative AI tools to help with ideation, design thinking and code optimisation?
-
-## Ethical considerations
-* Were there any data privacy, bias or fairness issues with the data?
-* How did you overcome any legal or societal issues?
-
-## Dashboard Design
-* List all dashboard pages and their content, either blocks of information or widgets, like buttons, checkboxes, images, or any other item that your dashboard library supports.
-* Later, during the project development, you may revisit your dashboard plan to update a given feature (for example, at the beginning of the project you were confident you would use a given plot to display an insight but subsequently you used another plot type).
-* How were data insights communicated to technical and non-technical audiences?
-* Explain how the dashboard was designed to communicate complex data insights to different audiences. 
+* Data was reviewed for cleanliness, the degree of skew and kurtosis for major measures was calculated to provide the analyst with a top level understanding of the shape of the data.  This information would be more important if the project was to be moved forward to machine learning, as most data was not Normally distributed and would require transformations to improve modelling.
+* Data analysis was started by looking at each of the core files provided to identify cleanliness of data, variability of measures and potential areas of commonality between Data sets. Following this data was combined based on learnings and summarised to Store level as although sales data was available at Department level the volume of departments (60-80) and lack of further distinguishing elements made informed learnings limited.  This was Highlighted as a future development opportunity.
+* The Data had no regional element so no Geographical Analysis could be undertaken, the Unemployment, CPI and Temperature data was not used in analysis during this project and potentially present future opportunities for learnings.
+* ChatGpt was used on several occasions to help error check code - usually with the request "Please identify what is wrong with this code" - the returned code was then reviewed and used.
 
 ## Unfixed Bugs
-* Please mention unfixed bugs and why they were not fixed. This section should include shortcomings of the frameworks or technologies used. Although time can be a significant variable to consider, paucity of time and difficulty understanding implementation are not valid reasons to leave bugs unfixed.
-* Did you recognise gaps in your knowledge, and how did you address them?
-* If applicable, include evidence of feedback received (from peers or instructors) and how it improved your approach or understanding.
+* Several early bugs occupied unnecessary effort and work rounds were implemented.  These were 
+1. Using the kaggle API to directly import data and enable easy and speedy refresh - this was an aspect of data acquisition that had not previously been achieved and the decision was made this could be a future development option. Instead files were download, unzipped and uploaded into the IDE.
+2. Issue syncing respository, due to an error of creating the project under a new personal organisation called "Golder-Development" rather than the developers personal "Hysnap" account several hrs were lost due to an inability to sync from GitPod to the new Organisation.  This was originally done with a view to making it more usable as an example of work for prospective employers. The work round implemented was to create a fork under the "Hysnap" account and sync to that and at project end copy the repository over to the new organisation for future sharing.
+3. A desire to provide improved axis labels for colormaps was shelved as a future improvement after limited investigation.
+4. The directory changing code at the top of the workbook led to several frustrating instances, so in the end it was hardcoded to the correct value to remove this issue.
 
 ## Development Roadmap
-* What challenges did you face, and what strategies were used to overcome these challenges?
-* What new skills or tools do you plan to learn next based on your project experience? 
-
-## Deployment
-### Heroku
-
-* The App live link is: https://YOUR_APP_NAME.herokuapp.com/ 
-* Set the runtime.txt Python version to a [Heroku-20](https://devcenter.heroku.com/articles/python-support#supported-runtimes) stack currently supported version.
-* The project was deployed to Heroku using the following steps.
-
-1. Log in to Heroku and create an App
-2. From the Deploy tab, select GitHub as the deployment method.
-3. Select your repository name and click Search. Once it is found, click Connect.
-4. Select the branch you want to deploy, then click Deploy Branch.
-5. The deployment process should happen smoothly if all deployment files are fully functional. Click now the button Open App on the top of the page to access your App.
-6. If the slug size is too large then add large files not required for the app to the .slugignore file.
-
+* The project lacked a clear understanding of the meaning of the data, for example were the department numbers unique per store or did a dept 72 at store 1 represent the same dept as the dept 72 at store 3.  
+* The lack of clarity provided in the data documentation regarding the exact measure represented by MarkDown meant investigation into the scale of the measure and educated guesses had to be made wrt to its relevance.
+* The Temperature, CPI and unemployment stat were also not clearly defined in the original documentation and had to be investigated.  They were and the decision to move their inclusion to future developments was made.
+* I intend to improve my understanding of Plotly.express and look to focus more on Modules for analysis, during this project I did quite a bit of cut and pasting following by manual alteration, were in the future I wish to be creating modules that can be used to auto format and display visualisation.
+* I would have liked to 
 
 ## Main Data Analysis Libraries
 * Here you should list the libraries you used in the project and provide an example(s) of how you used these libraries.
-
 
 ## Credits 
 
 * In this section, you need to reference where you got your content, media and extra help from. It is common practice to use code from other repositories and tutorials, however, it is important to be very specific about these sources to avoid plagiarism. 
 * You can break the credits section up into Content and Media, depending on what you have included in your project. 
 
-### Content 
-
-- The text for the Home page was taken from Wikipedia Article A
-- Instructions on how to implement form validation on the Sign-Up page was taken from [Specific YouTube Tutorial](https://www.youtube.com/)
-- The icons in the footer were taken from [Font Awesome](https://fontawesome.com/)
-
-### Media
-
-- The photos used on the home and sign-up page are from This Open-Source site
-- The images used for the gallery page were taken from this other open-source site
-
-
-
 ## Acknowledgements (optional)
-* Thank the people who provided support through this project.
+* I would like to thank Vazi and Niel for their support prior and during this project to improve my understanding.
+* I would like to thank all members of the WMCA Data Analytics and AI cohort for their support and raising issues that have helped me understand better.
